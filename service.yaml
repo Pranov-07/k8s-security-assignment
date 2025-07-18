@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: datetime-svc
+spec:
+  selector:
+    app: datetime
+  ports:
+    - port: 80
+      targetPort: 8080
+  type: LoadBalancer
