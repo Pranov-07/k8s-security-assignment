@@ -1,0 +1,84 @@
+{
+  "scanID": "mock-scan-20250718160155",
+  "scannedAt": "2025-07-18T16:01:55.174456Z",
+  "summary": {
+    "totalControls": 20,
+    "failedControls": 5,
+    "passedControls": 13,
+    "skippedControls": 2,
+    "resourcesCount": 2,
+    "severityCounts": {
+      "critical": 2,
+      "high": 2,
+      "medium": 1,
+      "low": 0
+    }
+  },
+  "results": [
+    {
+      "resourceID": "Deployment/nginx",
+      "namespace": "default",
+      "controls": [
+        {
+          "id": "C-001",
+          "name": "Privileged Container",
+          "severity": "critical",
+          "status": "failed"
+        },
+        {
+          "id": "C-002",
+          "name": "Run as Root",
+          "severity": "high",
+          "status": "failed"
+        },
+        {
+          "id": "C-003",
+          "name": "Read-Only Root Filesystem",
+          "severity": "medium",
+          "status": "failed"
+        },
+        {
+          "id": "C-004",
+          "name": "Host Network Access",
+          "severity": "high",
+          "status": "passed"
+        },
+        {
+          "id": "C-005",
+          "name": "AppArmor Profile",
+          "severity": "low",
+          "status": "skipped"
+        }
+      ]
+    },
+    {
+      "resourceID": "Deployment/redis",
+      "namespace": "default",
+      "controls": [
+        {
+          "id": "C-006",
+          "name": "AllowPrivilegeEscalation",
+          "severity": "critical",
+          "status": "failed"
+        },
+        {
+          "id": "C-007",
+          "name": "Seccomp Profile",
+          "severity": "high",
+          "status": "passed"
+        },
+        {
+          "id": "C-008",
+          "name": "Capabilities Drop",
+          "severity": "low",
+          "status": "skipped"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "scanner": "kubescape-mock",
+    "framework": "NSA",
+    "version": "3.0.0"
+  }
+}
